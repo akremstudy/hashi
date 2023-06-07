@@ -9,7 +9,7 @@ contract TellorAdapter is BlockHashOracleAdapter {
 
     error BlockHashNotAvailable();
 
-    constructor(address payable _tellorAddress) {
+    constructor(address _tellorAddress) {
         tellor = ITellor(_tellorAddress);
     }
 
