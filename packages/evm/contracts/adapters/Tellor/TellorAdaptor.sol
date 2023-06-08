@@ -30,7 +30,7 @@ contract TellorAdapter is BlockHashOracleAdapter {
     /// @param chainId Network identifier for the chain on which the block was mined.
     /// @param blockNumbers List of block identifiers for which to store block hashes.
     function storeHashes(uint256 chainId, uint256[] calldata blockNumbers) public {
-        bytes memory _queryData = abi.encode("EVMHeaderlist", abi.encode(chainId, blockNumbers));
+        bytes memory _queryData = abi.encode("EVMHeaderslist", abi.encode(chainId, blockNumbers));
         bytes32 _queryId = keccak256(_queryData);
         // delay 15 minutes to allow for disputes to be raised if bad value is submitted
         // (the longer the stronger the security)

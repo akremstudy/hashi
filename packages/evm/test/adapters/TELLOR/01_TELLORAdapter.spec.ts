@@ -70,7 +70,7 @@ describe("TELLORAdapter", () => {
       const { tellorPlayground, tellorAdapter } = await setup()
       // submit value to tellor oracle
       params = abiCoder.encode(["uint256", "uint256[]"], [CHAIN_ID, [BLOCK_NUMBER_ONE, BLOCK_NUMBER_TWO, BLOCK_NUMBER_THREE]])
-      queryData = abiCoder.encode(["string", "bytes"], ["EVMHeaderlist", params])
+      queryData = abiCoder.encode(["string", "bytes"], ["EVMHeaderslist", params])
       queryId = keccak256(queryData)
       let value = abiCoder.encode(["bytes32[]"], [[HASH_VALUE_ONE, HASH_VALUE_TWO, HASH_VALUE_THREE]])
       await tellorPlayground.submitValue(queryId, value, 0, queryData)
